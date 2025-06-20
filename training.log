@@ -1,0 +1,47 @@
+2025-06-13 16:52:21,981 - INFO - ==================================================
+2025-06-13 16:52:21,981 - INFO - Starting new training session
+2025-06-13 16:52:21,981 - INFO - ==================================================
+2025-06-13 16:52:21,981 - INFO - Starting model training at 2025-06-13 16:52:21.981137
+2025-06-13 16:52:21,981 - INFO - 
+[1/5] Loading data...
+2025-06-13 16:52:21,981 - INFO - Loading preprocessed data...
+2025-06-13 16:52:22,027 - INFO - Loaded data shape: (20631, 22)
+2025-06-13 16:52:22,029 - INFO - X shape: (20631, 21), y shape: (20631,)
+2025-06-13 16:52:22,029 - INFO - Loaded 20631 samples with 21 features
+2025-06-13 16:52:22,029 - INFO - Memory usage: 143.72 MB
+2025-06-13 16:52:22,029 - INFO - 
+[2/5] Creating features...
+2025-06-13 16:52:22,029 - INFO - Creating rolling window features (window=5)...
+2025-06-13 16:52:23,257 - INFO - Created 59 features
+2025-06-13 16:52:23,257 - INFO - X_engineered shape: (20231, 59), y_aligned shape: (20231,)
+2025-06-13 16:52:23,257 - INFO - Memory usage: 161.84 MB
+2025-06-13 16:52:23,257 - INFO - 
+[3/5] Scaling features...
+2025-06-13 16:52:23,275 - INFO - Scaled data shape: (20231, 59)
+2025-06-13 16:52:23,275 - INFO - Memory usage: 170.97 MB
+2025-06-13 16:52:23,275 - INFO - 
+[4/5] Training model...
+2025-06-13 16:52:23,600 - INFO - Memory usage: 189.24 MB
+2025-06-13 16:52:23,600 - INFO - 
+[5/5] Evaluating model...
+2025-06-13 16:52:23,617 - INFO - Training RMSE: 9.7570
+2025-06-13 16:52:23,617 - INFO - 
+Saving artifacts...
+2025-06-13 16:52:23,631 - INFO - 
+Training complete in 0.03 minutes!
+2025-06-13 16:52:23,631 - INFO - Model artifacts saved to: C:\Users\aiman\OneDrive\Desktop\PythonProject\Predictive Maintenance for Industrial Equipment\models
+2025-06-13 16:52:23,631 - INFO - 
+Top 10 most important features:
+2025-06-13 16:52:23,631 - INFO - 1. unit_id: 431.00
+2025-06-13 16:52:23,632 - INFO - 2. time_in_cycles: 281.00
+2025-06-13 16:52:23,632 - INFO - 3. sensor_14_rolling_mean: 105.00
+2025-06-13 16:52:23,632 - INFO - 4. sensor_09_rolling_mean: 99.00
+2025-06-13 16:52:23,632 - INFO - 5. sensor_11_rolling_mean: 52.00
+2025-06-13 16:52:23,632 - INFO - 6. sensor_13_rolling_mean: 49.00
+2025-06-13 16:52:23,632 - INFO - 7. sensor_15_rolling_mean: 49.00
+2025-06-13 16:52:23,632 - INFO - 8. sensor_04_rolling_mean: 47.00
+2025-06-13 16:52:23,632 - INFO - 9. sensor_12_rolling_mean: 36.00
+2025-06-13 16:52:23,632 - INFO - 10. sensor_02_rolling_mean: 32.00
+2025-06-13 16:52:23,633 - INFO - 
+==================================================
+

@@ -1,0 +1,244 @@
+2025-06-13 16:24:24,062 - INFO - Installing psutil for memory monitoring...
+2025-06-13 16:24:26,858 - INFO - ==================================================
+2025-06-13 16:24:26,859 - INFO - Starting new training session
+2025-06-13 16:24:26,859 - INFO - ==================================================
+2025-06-13 16:24:26,859 - INFO - Starting model training at 2025-06-13 16:24:26.859909
+2025-06-13 16:24:26,860 - INFO - 
+[1/5] Loading data...
+2025-06-13 16:24:26,860 - INFO - Loading preprocessed data...
+2025-06-13 16:24:26,905 - INFO - Loaded data shape: (20631, 22)
+2025-06-13 16:24:26,905 - INFO - X shape: (20631, 21), y shape: (20631,)
+2025-06-13 16:24:26,905 - INFO - Loaded 20631 samples with 21 features
+2025-06-13 16:24:26,905 - INFO - Memory usage: 150.12 MB
+2025-06-13 16:24:26,905 - INFO - 
+[2/5] Creating features...
+2025-06-13 16:24:28,550 - INFO - Created 59 features
+2025-06-13 16:24:28,550 - INFO - Memory usage: 168.57 MB
+2025-06-13 16:24:28,550 - INFO - 
+[3/5] Scaling features...
+2025-06-13 16:24:28,569 - INFO - Scaled data shape: (20231, 59)
+2025-06-13 16:24:28,569 - INFO - Memory usage: 176.70 MB
+2025-06-13 16:24:28,569 - INFO - 
+[4/5] Training model...
+2025-06-13 16:24:28,732 - ERROR - Error during training: [16:24:28] C:\actions-runner\_work\xgboost\xgboost\src\data\data.cc:542: Check failed: this->labels.Size() % this->num_row_ == 0 (400 vs. 0) : Incorrect size for labels: (20631,1) v.s. 20231
+Traceback (most recent call last):
+  File "C:\Users\aiman\OneDrive\Desktop\PythonProject\Predictive Maintenance for Industrial Equipment\train.py", line 262, in main
+    model, feature_importance = train_model(X_scaled, y)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aiman\OneDrive\Desktop\PythonProject\Predictive Maintenance for Industrial Equipment\train.py", line 160, in train_model
+    dtrain = xgb.DMatrix(X, label=y, enable_categorical=False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aiman\OneDrive\Desktop\PythonProject\.venv\Lib\site-packages\xgboost\core.py", line 729, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\aiman\OneDrive\Desktop\PythonProject\.venv\Lib\site-packages\xgboost\core.py", line 897, in __init__
+    self.set_info(
+  File "C:\Users\aiman\OneDrive\Desktop\PythonProject\.venv\Lib\site-packages\xgboost\core.py", line 729, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\aiman\OneDrive\Desktop\PythonProject\.venv\Lib\site-packages\xgboost\core.py", line 961, in set_info
+    self.set_label(label)
+  File "C:\Users\aiman\OneDrive\Desktop\PythonProject\.venv\Lib\site-packages\xgboost\core.py", line 1099, in set_label
+    dispatch_meta_backend(self, label, "label", "float")
+  File "C:\Users\aiman\OneDrive\Desktop\PythonProject\.venv\Lib\site-packages\xgboost\data.py", line 1603, in dispatch_meta_backend
+    _meta_from_pandas_series(data, name, dtype, handle)
+  File "C:\Users\aiman\OneDrive\Desktop\PythonProject\.venv\Lib\site-packages\xgboost\data.py", line 713, in _meta_from_pandas_series
+    _meta_from_numpy(data, name, dtype, handle)
+  File "C:\Users\aiman\OneDrive\Desktop\PythonProject\.venv\Lib\site-packages\xgboost\data.py", line 1533, in _meta_from_numpy
+    _check_call(_LIB.XGDMatrixSetInfoFromInterface(handle, c_str(field), interface_str))
+  File "C:\Users\aiman\OneDrive\Desktop\PythonProject\.venv\Lib\site-packages\xgboost\core.py", line 310, in _check_call
+    raise XGBoostError(py_str(_LIB.XGBGetLastError()))
+xgboost.core.XGBoostError: [16:24:28] C:\actions-runner\_work\xgboost\xgboost\src\data\data.cc:542: Check failed: this->labels.Size() % this->num_row_ == 0 (400 vs. 0) : Incorrect size for labels: (20631,1) v.s. 20231
+2025-06-13 16:24:28,737 - INFO - 
+==================================================
+
+2025-06-13 16:30:39,084 - INFO - ==================================================
+2025-06-13 16:30:39,084 - INFO - Starting new training session
+2025-06-13 16:30:39,084 - INFO - ==================================================
+2025-06-13 16:30:39,084 - INFO - Starting model training at 2025-06-13 16:30:39.084931
+2025-06-13 16:30:39,084 - INFO - 
+[1/5] Loading data...
+2025-06-13 16:30:39,084 - INFO - Loading preprocessed data...
+2025-06-13 16:30:39,123 - INFO - Loaded data shape: (20631, 22)
+2025-06-13 16:30:39,129 - INFO - X shape: (20631, 21), y shape: (20631,)
+2025-06-13 16:30:39,129 - INFO - Loaded 20631 samples with 21 features
+2025-06-13 16:30:39,129 - INFO - Memory usage: 143.54 MB
+2025-06-13 16:30:39,129 - INFO - 
+[2/5] Creating features...
+2025-06-13 16:30:39,129 - INFO - Creating rolling window features (window=5)...
+2025-06-13 16:30:40,318 - INFO - Created 59 features
+2025-06-13 16:30:40,318 - INFO - X_engineered shape: (20231, 59), y_aligned shape: (20231,)
+2025-06-13 16:30:40,318 - INFO - Memory usage: 162.28 MB
+2025-06-13 16:30:40,318 - INFO - 
+[3/5] Scaling features...
+2025-06-13 16:30:40,339 - INFO - Scaled data shape: (20231, 59)
+2025-06-13 16:30:40,339 - INFO - Memory usage: 170.44 MB
+2025-06-13 16:30:40,339 - INFO - 
+[4/5] Training model...
+2025-06-13 16:30:40,602 - INFO - Memory usage: 188.40 MB
+2025-06-13 16:30:40,602 - INFO - 
+[5/5] Evaluating model...
+2025-06-13 16:30:40,615 - ERROR - Error during training: Found input variables with inconsistent numbers of samples: [20631, 20231]
+Traceback (most recent call last):
+  File "C:\Users\aiman\OneDrive\Desktop\PythonProject\Predictive Maintenance for Industrial Equipment\train.py", line 289, in main
+    rmse = evaluate_model(model, X_scaled, y, 'train')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aiman\OneDrive\Desktop\PythonProject\Predictive Maintenance for Industrial Equipment\train.py", line 219, in evaluate_model
+    rmse = np.sqrt(mean_squared_error(y, y_pred))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aiman\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aiman\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\metrics\_regression.py", line 497, in mean_squared_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+                                          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aiman\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\metrics\_regression.py", line 102, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "C:\Users\aiman\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py", line 457, in check_consistent_length
+    raise ValueError(
+ValueError: Found input variables with inconsistent numbers of samples: [20631, 20231]
+2025-06-13 16:30:40,642 - INFO - 
+==================================================
+
+2025-06-13 16:31:22,464 - INFO - ==================================================
+2025-06-13 16:31:22,465 - INFO - Starting new training session
+2025-06-13 16:31:22,465 - INFO - ==================================================
+2025-06-13 16:31:22,465 - INFO - Starting model training at 2025-06-13 16:31:22.465678
+2025-06-13 16:31:22,466 - INFO - 
+[1/5] Loading data...
+2025-06-13 16:31:22,466 - INFO - Loading preprocessed data...
+2025-06-13 16:31:22,504 - INFO - Loaded data shape: (20631, 22)
+2025-06-13 16:31:22,511 - INFO - X shape: (20631, 21), y shape: (20631,)
+2025-06-13 16:31:22,511 - INFO - Loaded 20631 samples with 21 features
+2025-06-13 16:31:22,512 - INFO - Memory usage: 143.38 MB
+2025-06-13 16:31:22,512 - INFO - 
+[2/5] Creating features...
+2025-06-13 16:31:22,512 - INFO - Creating rolling window features (window=5)...
+2025-06-13 16:31:23,666 - INFO - Created 59 features
+2025-06-13 16:31:23,666 - INFO - X_engineered shape: (20231, 59), y_aligned shape: (20231,)
+2025-06-13 16:31:23,666 - INFO - Memory usage: 162.04 MB
+2025-06-13 16:31:23,666 - INFO - 
+[3/5] Scaling features...
+2025-06-13 16:31:23,689 - INFO - Scaled data shape: (20231, 59)
+2025-06-13 16:31:23,689 - INFO - Memory usage: 170.18 MB
+2025-06-13 16:31:23,689 - INFO - 
+[4/5] Training model...
+2025-06-13 16:31:23,947 - INFO - Memory usage: 187.80 MB
+2025-06-13 16:31:23,947 - INFO - 
+[5/5] Evaluating model...
+2025-06-13 16:31:23,961 - ERROR - Error during training: Found input variables with inconsistent numbers of samples: [20631, 20231]
+Traceback (most recent call last):
+  File "C:\Users\aiman\OneDrive\Desktop\PythonProject\Predictive Maintenance for Industrial Equipment\train.py", line 289, in main
+    rmse = evaluate_model(model, X_scaled, y, 'train')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aiman\OneDrive\Desktop\PythonProject\Predictive Maintenance for Industrial Equipment\train.py", line 219, in evaluate_model
+    rmse = np.sqrt(mean_squared_error(y, y_pred))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aiman\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aiman\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\metrics\_regression.py", line 497, in mean_squared_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+                                          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aiman\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\metrics\_regression.py", line 102, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "C:\Users\aiman\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py", line 457, in check_consistent_length
+    raise ValueError(
+ValueError: Found input variables with inconsistent numbers of samples: [20631, 20231]
+2025-06-13 16:31:23,964 - INFO - 
+==================================================
+
+2025-06-13 16:32:24,784 - INFO - ==================================================
+2025-06-13 16:32:24,784 - INFO - Starting new training session
+2025-06-13 16:32:24,784 - INFO - ==================================================
+2025-06-13 16:32:24,784 - INFO - Starting model training at 2025-06-13 16:32:24.784932
+2025-06-13 16:32:24,784 - INFO - 
+[1/5] Loading data...
+2025-06-13 16:32:24,784 - INFO - Loading preprocessed data...
+2025-06-13 16:32:24,830 - INFO - Loaded data shape: (20631, 22)
+2025-06-13 16:32:24,830 - INFO - X shape: (20631, 21), y shape: (20631,)
+2025-06-13 16:32:24,830 - INFO - Loaded 20631 samples with 21 features
+2025-06-13 16:32:24,834 - INFO - Memory usage: 143.81 MB
+2025-06-13 16:32:24,834 - INFO - 
+[2/5] Creating features...
+2025-06-13 16:32:24,834 - INFO - Creating rolling window features (window=5)...
+2025-06-13 16:32:26,235 - INFO - Created 59 features
+2025-06-13 16:32:26,235 - INFO - X_engineered shape: (20231, 59), y_aligned shape: (20231,)
+2025-06-13 16:32:26,235 - INFO - Memory usage: 162.39 MB
+2025-06-13 16:32:26,235 - INFO - 
+[3/5] Scaling features...
+2025-06-13 16:32:26,247 - INFO - Scaled data shape: (20231, 59)
+2025-06-13 16:32:26,247 - INFO - Memory usage: 171.52 MB
+2025-06-13 16:32:26,247 - INFO - 
+[4/5] Training model...
+2025-06-13 16:32:26,514 - INFO - Memory usage: 189.44 MB
+2025-06-13 16:32:26,514 - INFO - 
+[5/5] Evaluating model...
+2025-06-13 16:32:26,526 - INFO - Training RMSE: 9.7570
+2025-06-13 16:32:26,528 - INFO - 
+Saving artifacts...
+2025-06-13 16:32:26,542 - INFO - 
+Training complete in 0.03 minutes!
+2025-06-13 16:32:26,542 - INFO - Model artifacts saved to: C:\Users\aiman\OneDrive\Desktop\PythonProject\Predictive Maintenance for Industrial Equipment\models
+2025-06-13 16:32:26,542 - INFO - 
+Top 10 most important features:
+2025-06-13 16:32:26,542 - INFO - 1. unit_id: 431.00
+2025-06-13 16:32:26,542 - INFO - 2. time_in_cycles: 281.00
+2025-06-13 16:32:26,544 - INFO - 3. sensor_14_rolling_mean: 105.00
+2025-06-13 16:32:26,545 - INFO - 4. sensor_09_rolling_mean: 99.00
+2025-06-13 16:32:26,546 - INFO - 5. sensor_11_rolling_mean: 52.00
+2025-06-13 16:32:26,546 - INFO - 6. sensor_13_rolling_mean: 49.00
+2025-06-13 16:32:26,546 - INFO - 7. sensor_15_rolling_mean: 49.00
+2025-06-13 16:32:26,548 - INFO - 8. sensor_04_rolling_mean: 47.00
+2025-06-13 16:32:26,548 - INFO - 9. sensor_12_rolling_mean: 36.00
+2025-06-13 16:32:26,548 - INFO - 10. sensor_02_rolling_mean: 32.00
+2025-06-13 16:32:26,548 - INFO - 
+==================================================
+
+2025-06-13 16:33:18,512 - INFO - ==================================================
+2025-06-13 16:33:18,512 - INFO - Starting new training session
+2025-06-13 16:33:18,512 - INFO - ==================================================
+2025-06-13 16:33:18,512 - INFO - Starting model training at 2025-06-13 16:33:18.512536
+2025-06-13 16:33:18,512 - INFO - 
+[1/5] Loading data...
+2025-06-13 16:33:18,512 - INFO - Loading preprocessed data...
+2025-06-13 16:33:18,559 - INFO - Loaded data shape: (20631, 22)
+2025-06-13 16:33:18,562 - INFO - X shape: (20631, 21), y shape: (20631,)
+2025-06-13 16:33:18,562 - INFO - Loaded 20631 samples with 21 features
+2025-06-13 16:33:18,562 - INFO - Memory usage: 143.16 MB
+2025-06-13 16:33:18,562 - INFO - 
+[2/5] Creating features...
+2025-06-13 16:33:18,562 - INFO - Creating rolling window features (window=5)...
+2025-06-13 16:33:19,712 - INFO - Created 59 features
+2025-06-13 16:33:19,712 - INFO - X_engineered shape: (20231, 59), y_aligned shape: (20231,)
+2025-06-13 16:33:19,712 - INFO - Memory usage: 161.26 MB
+2025-06-13 16:33:19,712 - INFO - 
+[3/5] Scaling features...
+2025-06-13 16:33:19,734 - INFO - Scaled data shape: (20231, 59)
+2025-06-13 16:33:19,735 - INFO - Memory usage: 170.39 MB
+2025-06-13 16:33:19,735 - INFO - 
+[4/5] Training model...
+2025-06-13 16:33:19,998 - INFO - Memory usage: 189.42 MB
+2025-06-13 16:33:20,000 - INFO - 
+[5/5] Evaluating model...
+2025-06-13 16:33:20,014 - INFO - Training RMSE: 9.7570
+2025-06-13 16:33:20,015 - INFO - 
+Saving artifacts...
+2025-06-13 16:33:20,026 - INFO - 
+Training complete in 0.03 minutes!
+2025-06-13 16:33:20,026 - INFO - Model artifacts saved to: C:\Users\aiman\OneDrive\Desktop\PythonProject\Predictive Maintenance for Industrial Equipment\models
+2025-06-13 16:33:20,028 - INFO - 
+Top 10 most important features:
+2025-06-13 16:33:20,028 - INFO - 1. unit_id: 431.00
+2025-06-13 16:33:20,029 - INFO - 2. time_in_cycles: 281.00
+2025-06-13 16:33:20,029 - INFO - 3. sensor_14_rolling_mean: 105.00
+2025-06-13 16:33:20,029 - INFO - 4. sensor_09_rolling_mean: 99.00
+2025-06-13 16:33:20,029 - INFO - 5. sensor_11_rolling_mean: 52.00
+2025-06-13 16:33:20,030 - INFO - 6. sensor_13_rolling_mean: 49.00
+2025-06-13 16:33:20,030 - INFO - 7. sensor_15_rolling_mean: 49.00
+2025-06-13 16:33:20,030 - INFO - 8. sensor_04_rolling_mean: 47.00
+2025-06-13 16:33:20,030 - INFO - 9. sensor_12_rolling_mean: 36.00
+2025-06-13 16:33:20,030 - INFO - 10. sensor_02_rolling_mean: 32.00
+2025-06-13 16:33:20,031 - INFO - 
+==================================================
+
