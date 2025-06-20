@@ -53,8 +53,6 @@ We rigorously tested our model on a set of engines it had never seen before. The
 *   **Accuracy within ±30 Cycles: [Value]%**
     *   *In simple terms:* This percentage of our predictions were "in the ballpark," falling within 30 cycles of the true failure point. This is crucial for making confident maintenance scheduling decisions.
 
-> **Bottom Line:** The model provides a reliable forecast that is accurate enough to be used for real-world maintenance planning.
-
 ---
 
 ## The Dashboard: Your Mission Control for Engine Health
