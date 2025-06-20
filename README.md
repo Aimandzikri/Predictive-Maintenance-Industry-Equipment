@@ -116,7 +116,7 @@ The trained model can be easily integrated into production systems through:
 
 ## 8. Dataset
 
-NASA Turbofan Engine Degradation Simulation (CMAPSS) – subset **FD001** (single operating condition, single fault). Original data available at the [PHM Society Data Challenge](https://www.phmsociety.org/).
+NASA Turbofan Engine Degradation Simulation (CMAPSS) – subset **FD001** (single operating condition, single fault). Original data available at the [https://www.kaggle.com/datasets/behrad3d/nasa-cmaps).
 
 ---
 
