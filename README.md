@@ -4,6 +4,9 @@ This project demonstrates an end-to-end **Remaining Useful Life (RUL)** predicti
 
 The repository is organised around three production-ready Python scripts – **no notebooks** – and a Streamlit dashboard for interactive exploration.
 
+🚀 **[Launch the App](https://predictivemaintenance-industry.streamlit.app/)**  
+📺 **[Watch the Demo Video](https://youtu.be/j2kfLIAS0PY)**
+
 ---
 
 ## 1. Quick Start
