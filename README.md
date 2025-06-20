@@ -1,8 +1,8 @@
 # Predicting Jet Engine Failure Before It Happens
 
-This project showcases a powerful AI system that predicts when a jet engine will need maintenance, long before a critical failure occurs. Using real-world data from NASA, our model acts like a "crystal ball" for engine health, helping to prevent costly downtime, increase safety, and improve operational efficiency.
+This project presents a powerful AI system that predicts when a jet engine will need maintenance, long before a critical failure occurs. Using real-world data from NASA, the model acts like a "crystal ball" for engine health, helping to prevent costly downtime, increase safety, and improve operational efficiency.
 
-The system is built as a complete, end-to-end solution, from raw data processing to an interactive dashboard that anyone can use.
+The system is built as a complete, end-to-end solution, from raw data processing to an interactive dashboard.
 
 🚀 **[Launch the Interactive Dashboard](https://predictivemaintenance-industry.streamlit.app/)**  
 📺 **[Watch the Demo Video](https://youtu.be/j2kfLIAS0PY)**
@@ -11,70 +11,70 @@ The system is built as a complete, end-to-end solution, from raw data processing
 
 ## The Goal: From Reactive to Proactive Maintenance
 
-Traditionally, maintenance is done on a fixed schedule (e.g., every 1000 hours) or after a part has already failed. This is inefficient and risky.
+Traditionally, maintenance is performed on a fixed schedule (e.g., every 1000 hours) or after a part has already failed. This approach is both inefficient and risky.
 
-Our goal is to shift to **predictive maintenance**: using data to forecast failures *before they happen*. By knowing an engine's **Remaining Useful Life (RUL)**, maintenance can be scheduled precisely when needed, saving millions in costs and preventing catastrophic failures.
+The goal is to shift to **predictive maintenance**: using data to forecast failures *before they happen*. By knowing an engine's **Remaining Useful Life (RUL)**, maintenance can be scheduled precisely when needed, saving millions in costs and preventing catastrophic failures.
 
-  <!-- You can create a simple visual for this -->
+  <!-- A simple visual could illustrate the shift from reactive to proactive maintenance -->
 
 ---
 
 ## How It Works: A 3-Step Process
 
-Our automated system transforms raw sensor data into actionable predictions in three key stages:
+The automated system transforms raw sensor data into actionable predictions in three key stages:
 
 | Step | What It Does | The Outcome |
 |:----:|--------------|-------------|
 | 1️⃣ | **Understand the Past** | Reads historical data from thousands of engine cycles, learning the patterns of wear and tear that lead to failure. |
 | 2️⃣ | **Build the Crystal Ball** | Trains an advanced AI model (XGBoost) to recognize these complex patterns. It learns to connect subtle changes in sensor readings to the engine's remaining lifespan. |
-| 3️⃣ | **Predict the Future** | Deploys the trained model into an interactive dashboard where you can select any engine at any point in its life and instantly see its predicted RUL. |
+| 3️⃣ | **Predict the Future** | Deploys the trained model into an interactive dashboard where a user can select any engine at any point in its life and instantly see its predicted RUL. |
 
 ---
 
-## The "Brain" Behind the Prediction: Our AI Model
+## The Prediction Model
 
-At the heart of our system is a sophisticated AI model specifically chosen for its high accuracy and ability to understand complex data.
+At the heart of the system is a sophisticated AI model specifically chosen for its high accuracy and ability to interpret complex data.
 
 *   **Model Type**: **XGBoost**, an industry-leading algorithm known for its performance in predictive tasks.
-*   **What It Looks At**: It analyzes **14 key sensor readings** (like temperature, pressure, and speed) along with 3 operational settings to get a complete picture of engine health.
-*   **How It Gets Smart**: Instead of just looking at a single snapshot in time, the model analyzes **recent sensor trends** (e.g., the average and stability of readings over the last 5 cycles). This allows it to spot degradation long before it becomes critical.
-*   **What It Predicts**: The **Remaining Useful Life (RUL)**, measured in operational cycles.
+*   **What It Analyzes**: The model processes **14 key sensor readings** (like temperature, pressure, and speed) along with 3 operational settings to build a complete picture of engine health.
+*   **Feature Engineering**: Instead of using a single snapshot in time, the model analyzes **recent sensor trends** (e.g., the average and stability of readings over the last 5 cycles). This technique allows it to spot degradation long before it becomes critical.
+*   **Prediction Target**: The **Remaining Useful Life (RUL)**, measured in operational cycles.
 
 ---
 
-## How Accurate Is It? Model Performance
+## Model Performance
 
-We rigorously tested our model on a set of engines it had never seen before. The results show a high degree of accuracy and reliability.
+The model was rigorously tested on a set of engines it had never seen before, demonstrating a high degree of accuracy and reliability.
 
 *   **Root Mean Squared Error (RMSE): [Value] cycles**
-    *   *In simple terms:* This is the typical "margin of error" for our predictions. On average, our RUL prediction is off by about this many cycles. A lower number is better.
+    *   *In simple terms:* This is the typical "margin of error" for the predictions. On average, the RUL prediction is off by about this many cycles. A lower number is better.
 *   **Mean Absolute Error (MAE): [Value] cycles**
-    *   *In simple terms:* This tells us the average absolute difference between our prediction and the actual outcome. It's another way to confirm the model's high accuracy.
+    *   *In simple terms:* This metric represents the average absolute difference between the predicted RUL and the actual outcome, confirming the model's high accuracy.
 *   **Accuracy within ±30 Cycles: [Value]%**
-    *   *In simple terms:* This percentage of our predictions were "in the ballpark," falling within 30 cycles of the true failure point. This is crucial for making confident maintenance scheduling decisions.
+    *   *In simple terms:* This percentage of predictions fall within 30 cycles of the true failure point. This level of accuracy is crucial for making confident maintenance scheduling decisions.
 
 ---
 
-## The Dashboard: Your Mission Control for Engine Health
+## The Interactive Dashboard: Mission Control for Engine Health
 
-The interactive dashboard makes our powerful AI accessible to everyone, from engineers to executives.
+The interactive dashboard makes the powerful AI model accessible to a wide range of users, from engineers to executives.
 
-1.  **Overall Performance:** See the model's accuracy metrics at a glance.
-2.  **Select an Engine:** Choose any of the 100 test engines to analyze.
-3.  **Go Back in Time:** Use the slider to see what the prediction would have been at any point in the engine's history.
-4.  **Instant Prediction:** A gauge immediately shows the predicted RUL, color-coded for urgency:
-    *   **Green:** Healthy (>100 cycles left)
-    *   **Amber:** Caution (30–100 cycles left)
-    *   **Red:** Warning (under 30 cycles left)
-5.  **Ground Truth:** Compare the prediction to the engine's actual RUL for that cycle to build trust in the system.
-6.  **Sensor Trends:** Watch how key sensor readings change over the engine's lifetime.
-7.  **Prediction Drivers:** See which sensors were most important for the model's prediction, providing transparency and insight.
+1.  **Overall Performance:** View the model's key accuracy metrics at a glance.
+2.  **Engine Selection:** Choose any of the 100 test engines for analysis.
+3.  **Historical Analysis:** Use the time-series slider to see the RUL prediction at any point in the engine's operational history.
+4.  **Instant Prediction:** A dynamic gauge immediately displays the predicted RUL, color-coded for urgency:
+    *   **Green:** Healthy (>100 cycles remaining)
+    *   **Amber:** Caution (30–100 cycles remaining)
+    *   **Red:** Warning (< 30 cycles remaining)
+5.  **Ground Truth Comparison:** Compare the live prediction to the engine's actual RUL for that cycle to validate the model's accuracy.
+6.  **Sensor Trend Visualization:** Observe how key sensor readings evolve over the engine's lifetime.
+7.  **Prediction Drivers (Feature Importance):** Identify which sensors were most influential in the model's prediction, providing transparency and actionable insights.
 
 ---
 
-## Putting the Model to Work
+## Real-World Application
 
-This system isn't just an experiment; it's a blueprint for real-world applications. The trained model can be integrated into:
+This system is a blueprint for real-world applications. The trained model can be integrated into:
 
 *   **Real-time Monitoring Systems** on a factory floor or in an aircraft fleet.
 *   **Automated Alerting Systems** that notify maintenance crews when an asset's RUL drops below a certain threshold.
